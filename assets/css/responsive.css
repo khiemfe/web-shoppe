@@ -1,0 +1,200 @@
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+    
+
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+
+    .header {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .header__cart-list {
+        position: fixed;
+        top: var(--header-height);
+        right: 0px;
+        width: 100%;
+        padding: 0 calc((100% - 644px) / 2);
+    }
+
+    .header__cart-list::after {
+        display: none;
+    }
+
+    .app_container {
+        margin-top: calc(var(--header-height) + var(--header-sort-bar-height));
+    }
+
+    .header__sort-bar {
+        display: flex;
+    }
+
+    .app_content {
+        padding-top: 8px;
+    }
+
+    .mobile-category {
+        display: block;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    /* chỉnh lại chiều cao header */
+    :root {
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
+
+    .hide-on-tablet {
+        display: none;
+    }
+
+    .header__cart {
+        width: 80px;
+        text-align: right;
+    }
+}
+
+/* Mobile*/
+@media (max-width: 739px) {
+    /* chỉnh lại chiều cao header */
+    :root {
+        --header-height: 60px;
+        --navbar-height: 0px;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .header-with-search {
+        justify-content: space-between;
+
+    }
+
+    .header__logo,
+    .header__cart {
+        /* reset lại chiều dài logo chỉ bằng vs chính nó thôi để nó space-between chuẩn hơn*/
+        width: unset;
+    }
+
+    .header__search {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        z-index: 1;
+        padding: 0 16px;
+        animation: mobileSearchSideIn linear 0.3s;
+        display: none;
+    }
+    @keyframes mobileSearchSideIn {
+        from {
+            opacity: 0;
+            top: calc(var(--header-height) / 2);
+        }
+        to {
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+
+    .header__search-checkbox:checked ~ .header__search {
+        display: flex;
+    }
+
+    .header__search-history {
+        position: fixed;
+        width: 100%;
+        top: calc(var(--header-height) + var(--header-sort-bar-height));
+        left: 0;
+        /* right: 0; */
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .pagination-item {
+        padding: 0;
+    }
+
+    .pagination-item__link {
+        display: block;
+        --height: 28px;
+        font-size: 1.6rem;
+        min-width: 38px;
+    }
+
+    /* fix khoảng trắng dư ra */
+    /* .app {
+        overflow: hidden;
+    } */
+
+    .app_content {
+        /* đè lên cái margin trái phải -4 sẵn có, để nó lùi vô trông 1 tí */
+        margin: 0 4px;
+        /* padding-top: 8px; */
+    }
+
+    .header__mobile-search {
+        display: block;
+    }
+
+    .header__logo-img {
+        width: 110px;
+    }
+
+    /* .app_footer {
+        padding: 0 16px;
+    } */
+
+    .footer__content-mobile {
+        padding: 0 20px;
+    }
+
+    /* .center-mobile {
+        text-align: center;
+    } */
+    /* 
+    .footer__list {
+        display: inline-block;
+        margin-top: -5px;
+    } */
+
+    .footer__heading {
+        text-align: center;
+    }
+
+    .footer__download,
+    .footer-item__link {
+        justify-content: center;
+    }
+    
+    /* inline-block thì nó sẽ xuống dòng hết, còn inline-flex thì sẽ căn giữa và giữ nguyên */
+    
+    /* .footer__download {
+        display: block;;
+    } */
+
+    /* .inline-block__mobile {
+        display: inline-block;
+    } */
+
+
+    /* giá */
+    
+    .home-product-item__price-old{
+        font-size: 1rem;
+    }
+    
+    .home-product-item__price-current{
+        font-size: 1.4rem;
+    }
+}
